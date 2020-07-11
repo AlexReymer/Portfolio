@@ -1,0 +1,170 @@
+:root{
+  --color-1: #747C92;
+  --color-2: #DC493A;
+  --color-3: #97D8C4;
+  --color-4: #FFBF46;
+}
+
+.app-container {
+  background-color: var(--color-3);
+  height: 100vh;
+  width: 100vw;
+}
+
+.app{
+  display: flex;
+  flex-direction: row;
+  height: 80vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+#home{
+  height: 80vh;
+  width: 100vw;
+}
+
+.app-banner-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 10vh;
+  height: 40vh;
+  width: 100vw;
+  background-color: white;
+  /*background-image: url("../images/banner.svg");
+  background-repeat: repeat-y;
+  background-size: 105%;*/
+  overflow: hidden;
+}
+
+.app-banner__text{
+  text-align: center;
+  color: var(--color-4);
+  opacity: 20%;
+  font-size: 2.7vmax;
+}
+
+.app-banner-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+}
+
+.app-banner{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 1%;
+  top: 10%;
+}
+
+.app-banner__name{
+  color: var(--color-2);
+  font-size: 4.8rem;
+  margin: 0 0 1rem 0;
+}
+
+.app-banner__subtitle{
+  color: white;
+  background-color: var(--color-2);
+  text-align: center;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: lighter;
+}
+
+.app-buttons{
+  width: inherit;
+  height: 4vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 85vh;
+}
+
+.app-buttons__seperator{
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-bottom-color: var(--color-1);
+  position: relative;
+  top: -5px;
+}
+
+.app-buttons__seperator:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: -5px;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top-color: var(--color-1);
+}
+
+.button--circular{
+  height: 1.0rem;
+  width: 1.0rem;
+  background-color: var(--color-1);
+  border-radius: 50%;
+  margin: 0.25rem;
+
+  box-shadow: 0px 2px 5px var(--color-1);
+
+  transition: all 800ms;
+}
+
+.button--circular:hover{
+  background-color: white;
+}
+
+.button--circular--selected{
+  height: 1.25rem;
+  width: 1.25rem;
+  margin: 0.15rem;
+  background-color: var(--color-2);
+}
+.button--circular--selected:hover{
+  background-color: var(--color-2);
+}
+
+.button--rect{
+  color: white;
+  text-decoration: none;
+  background-color: var(--color-2);
+  padding: 1vw;
+
+  position: absolute;
+  left: 30.75vw;
+  bottom: 20vh;
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 601px){
+  .app-banner{
+    position: unset;
+  }
+
+  .app-banner__text{
+    font-size: 3vmax;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .app-banner{
+    position: unset;
+  }
+
+  .app-banner__text{
+    font-size: 3.5vmax;
+  }
+
+  .app-banner__name{
+    font-size: 3.25rem;
+  }
+}
