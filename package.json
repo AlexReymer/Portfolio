@@ -19,7 +19,7 @@
     "typescript": "^3.9.5"
   },
   "scripts": {
-    "start": "node server.ts",
+    "start": "ts-node server.ts",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "build": "react-scripts build",
     "test": "react-scripts test",
