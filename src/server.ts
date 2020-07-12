@@ -1,11 +1,10 @@
 const express = require('express')
 const path = require('path')
 const app = express()
+const port = process.env.PORT || 8080;
 const mongoose = require('mongoose')
 const router = express.Router();
 const { Project } = require('./models/project')
-
-app.use(express.static(path.join(__dirname, 'build')))
 
 console.log('Server started!')
 
@@ -16,12 +15,20 @@ mongoose.connect("mongodb://localhost:27017/PortfolioAPI", {
 
 const connection = mongoose.connection
 
-connection.once("open", function() {
-    console.log("Connection with MongoDB was successful");
-})
+connection.once('open', () => console.log('Connection with MongoDB was successful'))
+
+if (process.env.NODE_ENV === 'production') {
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, 'build')))
+    
+  // Handle React routing, return all requests to React app
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  });
+}
 
 app.use('/', router)
-app.listen(process.env.PORT || 8080)
+app.listen(port, () => console.log(`Listening on port ${port}`))
 
 
 /*
