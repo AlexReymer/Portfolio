@@ -25,7 +25,7 @@ app.listen(process.env.PORT || 8080)
 
 
 /*
- * GET Route: Gets a list of all projects
+ * GET Route: Gets a list of all projects.
  */
 router.route('/getProjects').get(function(req, res) {
   Project.find().then(projects => {
@@ -37,7 +37,7 @@ router.route('/getProjects').get(function(req, res) {
 
 
 /*
- * GET Route: Gets the project with the given title
+ * GET Route: Gets the project with the given title.
  */
 router.route('/getProjectsByTitle/:title').get((req, res) => {
   Project.find().then(projects => {
@@ -52,6 +52,9 @@ router.route('/getProjectsByTitle/:title').get((req, res) => {
   })
 })
 
+/*
+ * GET Route: Gets projects with a matching tag.
+ */
 router.route('/getProjectsByTag/:tag').get((req, res) => {
 	Project.find().then((projects) => {
     if (!projects) {

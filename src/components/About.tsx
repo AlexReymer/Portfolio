@@ -19,11 +19,12 @@ class About extends React.Component<{ skills }, { relatedProjects }>{
             fetch(`/getProjectsByTag/${tag}`, {
                 method: 'GET',
                 headers: new Headers()
-            }).then(res => res.json())
-                .then(json => {
-                    const relatedProjects: String[] = json.map(obj => obj.title)
-                    this.setState({ relatedProjects: relatedProjects})
-                })
+            }).then(res => res.json()).then(json => {
+                const relatedProjects: String[] = json.map(obj => obj.title)
+                this.setState({ relatedProjects: relatedProjects})
+            }).catch((error) => {
+                console.log(error)
+            })
         }else{
             this.setState({relatedProjects: []})
         }

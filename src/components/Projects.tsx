@@ -19,14 +19,15 @@ class Projects extends React.Component<{}, { titles, currentProject }>{
         fetch('/getProjects', {
             method: 'GET',
             headers: new Headers(),
-        }).then(res => res.json())
-            .then(json => {
-                const titles = json.map(obj => obj.title)
-                this.setState({
-                    titles: titles,
-                    currentProject: this.state.currentProject
-                })
+        }).then(res => res.json()).then(json => {
+            const titles = json.map(obj => obj.title)
+            this.setState({
+                titles: titles,
+                currentProject: this.state.currentProject
             })
+        }).catch((error) => {
+            console.log(error)
+        })
     }
     
     /*
@@ -38,15 +39,16 @@ class Projects extends React.Component<{}, { titles, currentProject }>{
             fetch(`/getProjectsByTitle/${(e.target as HTMLElement).innerText}`, {
                 method: 'GET',
                 headers: new Headers()
-            }).then(res => res.json())
-                .then(json => {
-                    document.getElementById(`projects-bookmark__${this.state.currentProject.title}`)?.classList.remove('projects-bookmark__name--highlight')
-                    this.setState({
-                        titles: this.state.titles,
-                        currentProject: json[0]
-                    })
-                    document.getElementById(`projects-bookmark__${this.state.currentProject.title}`)?.classList.add('projects-bookmark__name--highlight')
+            }).then(res => res.json()).then(json => {
+                document.getElementById(`projects-bookmark__${this.state.currentProject.title}`)?.classList.remove('projects-bookmark__name--highlight')
+                this.setState({
+                    titles: this.state.titles,
+                    currentProject: json[0]
                 })
+                document.getElementById(`projects-bookmark__${this.state.currentProject.title}`)?.classList.add('projects-bookmark__name--highlight')
+            }).catch((error) => {
+                console.log(error)
+            })
         }
     }
 
