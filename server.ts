@@ -17,15 +17,13 @@ const connection = mongoose.connection
 
 connection.once('open', () => console.log('Connection with MongoDB was successful'))
 
-if (process.env.NODE_ENV === 'production') {
-  // Serve any static files
-  app.use(express.static(path.join(__dirname, 'build')))
+// Serve any static files
+app.use(express.static(path.join(__dirname, 'build')))
     
-  // Handle React routing, return all requests to React app
-  app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-  });
-}
+// Handle React routing, return all requests to React app
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'))
+})
 
 app.use('/', router)
 app.listen(port, () => console.log(`Listening on port ${port}`))
