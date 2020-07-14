@@ -7,7 +7,7 @@ import About from './About'
 import Projects from './Projects'
 import Contact from './Contact'
 
-class App extends React.Component<{}, { currentSlide, headerText, skills }>{
+class App extends React.Component<{}, { currentSlide, skills }>{
   constructor(props: any){
     super(props)
 
@@ -25,14 +25,8 @@ class App extends React.Component<{}, { currentSlide, headerText, skills }>{
         'Git'
     ]
 
-    let headerText: String = ''
-    for (let i = 0; i < 60; i++){
-        headerText += `\xa0 ${skills[Math.floor(Math.random() * skills.length)]}`  
-    }
-
     this.state={ 
         currentSlide: 'main-buttons_0',
-        headerText: headerText,
         skills: skills
     }
   }
@@ -101,11 +95,15 @@ class App extends React.Component<{}, { currentSlide, headerText, skills }>{
   }
   
   render(){
+    /*let headerText: String = ''
+    for (let i = 0; i < 60; i++){
+        headerText += `\xa0 ${skills[Math.floor(Math.random() * skills.length)]}`  
+    }*/
     return (
       <div  className='app-container'>
         <Header/>
         <div className='app'>
-            <Home headerText={this.state.headerText.slice(2)}/>
+            <Home/>
             <About skills={this.state.skills}/>
             <Projects/>
             <Contact/>

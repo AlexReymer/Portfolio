@@ -42,7 +42,7 @@
 .app-banner__text{
   text-align: center;
   color: var(--color-4);
-  opacity: 20%;
+  opacity: 0.2;
   font-size: 2.7vmax;
 }
 

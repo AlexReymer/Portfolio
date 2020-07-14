@@ -6,9 +6,9 @@ const mongoose = require('mongoose')
 const router = express.Router();
 const { Project } = require('./src/models/project')
 
-console.log('Server started!')
+const uri = process.env.PROD_MONGODB || 'mongodb://localhost:27017/PortfolioAPI'
 
-mongoose.connect("mongodb://localhost:27017/PortfolioAPI", {
+mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
