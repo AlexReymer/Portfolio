@@ -8,6 +8,7 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "@types/mongoose": "^5.7.31",
+    "emailjs-com": "^2.4.1",
     "express": "^4.17.1",
     "mongoose": "^5.9.23",
     "node-sass": "^4.14.1",

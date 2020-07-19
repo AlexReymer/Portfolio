@@ -2,10 +2,12 @@ const express = require('express')
 const path = require('path')
 const app = express()
 const port = process.env.PORT || 8080;
-const mongoose = require('mongoose')
-const router = express.Router();
+
+// Load the Project model
 const { Project } = require('./src/models/project')
 
+// Connect to the MongoDB Atlas database
+const mongoose = require('mongoose')
 const uri = process.env.PROD_MONGODB || 'mongodb://localhost:27017/PortfolioAPI'
 
 mongoose.connect(uri, {
@@ -20,19 +22,15 @@ connection.once('open', () => console.log('Connection with MongoDB was successfu
 // Serve any static files
 app.use(express.static(path.join(__dirname, 'build')))
     
-// Handle React routing, return all requests to React app
-app.get('/', function(req, res) {
+// Send index.html to render the website
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
-
-app.use('/', router)
-app.listen(port, () => console.log(`Listening on port ${port}`))
-
 
 /*
  * GET Route: Gets a list of all projects.
  */
-router.route('/getProjects').get(function(req, res) {
+app.get('/getProjects', (req, res) => {
   Project.find().then(projects => {
       res.send(projects);
     }).catch(error => {
@@ -44,7 +42,7 @@ router.route('/getProjects').get(function(req, res) {
 /*
  * GET Route: Gets the project with the given title.
  */
-router.route('/getProjectsByTitle/:title').get((req, res) => {
+app.get('/getProjectsByTitle/:title', (req, res) => {
   Project.find().then(projects => {
     if (!projects){
       res.satus(404).send('Cant find projects.')
@@ -60,7 +58,7 @@ router.route('/getProjectsByTitle/:title').get((req, res) => {
 /*
  * GET Route: Gets projects with a matching tag.
  */
-router.route('/getProjectsByTag/:tag').get((req, res) => {
+app.get('/getProjectsByTag/:tag', (req, res) => {
 	Project.find().then((projects) => {
     if (!projects) {
 			res.status(404).send()
@@ -76,5 +74,7 @@ router.route('/getProjectsByTag/:tag').get((req, res) => {
 		res.status(500).send(error)
 	})
 })
+
+app.listen(port, () => console.log(`Listening on port ${port}`))
 
 export {}

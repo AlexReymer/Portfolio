@@ -51,7 +51,21 @@
     width: 100%;
 }
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--color-2);
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--color-2);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color:var(--color-2);
+}
+
 #contact-form__message{
+    font-family: Arial, Helvetica, sans-serif;
     resize: none;
 }
 
