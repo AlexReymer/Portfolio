@@ -1,5 +1,4 @@
 import * as React from 'react'
-import emailjs from 'emailjs-com';
 import '../styles/Contact.css'
 
 class Contact extends React.Component<{}, {validName, validEmail, validSubject, validMessage}>{
@@ -14,6 +13,9 @@ class Contact extends React.Component<{}, {validName, validEmail, validSubject, 
         }
     }
 
+    /*
+     * Checks that all contact-form fields and non-empty and valid.
+     */
     formValidation = () => {
         const name: String = (document.getElementById('contact-form__name') as HTMLInputElement).value
         const email: String = (document.getElementById('contact-form__email') as HTMLInputElement).value
@@ -42,21 +44,31 @@ class Contact extends React.Component<{}, {validName, validEmail, validSubject, 
         return validName && validEmail && validSubject && validMessage
     }
 
+    /*
+     * Makes a POST request to send an email after validating the form.
+     */
     sendEmail = (e: any) => {
         if (this.formValidation()){
-            const template_params: Object = {
-                "from_email": (document.getElementById('contact-form__email') as HTMLInputElement).value,
-                "subject": (document.getElementById('contact-form__subject') as HTMLInputElement).value,
-                "from_name": (document.getElementById('contact-form__name') as HTMLInputElement).value,
-                "message": (document.getElementById('contact-form__message') as HTMLTextAreaElement).value
+            const data: Object = {
+                from_email: (document.getElementById('contact-form__email') as HTMLInputElement).value,
+                subject: (document.getElementById('contact-form__subject') as HTMLInputElement).value,
+                from_name: (document.getElementById('contact-form__name') as HTMLInputElement).value,
+                message: (document.getElementById('contact-form__message') as HTMLTextAreaElement).value
              }
-
-            emailjs.send('default_service', 'edited_template', template_params, process.env.EMAILJS_ID)
-                .then((result) => {
-                    console.log(result.text)
-                }, (error) => {
-                    console.log(error.text)
-                })
+            fetch('/sendEmail', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                cache: 'no-cache',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(res => {
+                console.log("Success: Email Sent!")
+            }).catch((error) => {
+                console.error(`Error: ${error}`)
+            })
+        }else{
+            e.preventDefault()
         }
     }
 
@@ -65,7 +77,7 @@ class Contact extends React.Component<{}, {validName, validEmail, validSubject, 
         <div className='contact-flex' id='contact'>
             <div className='contact-container'>
                 <h1 className='contact-title'>Contact Me</h1>
-                <form onSubmit={() => false} className='contact-form'>
+                <form onSubmit={this.sendEmail} className='contact-form'>
                     <label className='contact-form__label'>Name</label>
                     <input 
                         style={this.state.validName ? {} : { border: 'solid 1px var(--color-2)'}} 
@@ -90,10 +102,10 @@ class Contact extends React.Component<{}, {validName, validEmail, validSubject, 
                         placeholder={this.state.validMessage ? '' : 'Please enter a message!'}
                         name='message'
                         rows={3} className='contact-form__input' id='contact-form__message'/>
+                    <div className='contact-button-container'>
+                        <input type='submit' className='contact-button' data-testid='button-contact' value='Send'/>
+                    </div>
                 </form>
-                <div className='contact-button-container'>
-                    <button onClick={this.sendEmail} className='contact-button' data-testid='button-contact' value='Send'/>
-                </div>
             </div>
         </div>)
     }
