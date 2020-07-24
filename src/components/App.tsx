@@ -32,6 +32,9 @@ class App extends React.Component<{}, { currentSlide, skills }>{
   }
 
   componentDidMount(){
+      const vh: Number = window.innerHeight * 0.01
+      document.documentElement.style.setProperty('--vh', `${vh}px`)
+
       document.addEventListener('keydown', this.scrollButtonKeypress)
       window.onresize = this.screenResize  
   }
@@ -44,6 +47,9 @@ class App extends React.Component<{}, { currentSlide, skills }>{
    * Repositions the currently viewed component when the screen is resized.
    */
   screenResize = () => {
+      const vh: Number = window.innerHeight * 0.01
+      document.documentElement.style.setProperty('--vh', `${vh}px`)
+      
       document.getElementById(this.state.currentSlide)?.click()
   }
 

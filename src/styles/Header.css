@@ -10,6 +10,7 @@
     background-color: black;
     width: 100vw;
     height: 12vh;
+    height: calc(var(--vh, 1vh) * 12);
 
     box-shadow: 2px 2px 5px var(--color-1);
 }
@@ -17,6 +18,7 @@
 #header-logo{   
     position: relative;
     max-height: 17vh;
+    max-height: calc(var(--vh, 1vh) * 17);
     max-width: 22vw;
     left: 4vw;
 
@@ -26,6 +28,7 @@
 
 #header-logo:hover{
     max-height: 18vh;
+    max-height: calc(var(--vh, 1vh) * 18);
     max-width: 23vw;
 }
 

@@ -7,7 +7,8 @@
 
 .app-container {
   background-color: var(--color-3);
-  height: 100%;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   width: 100vw;
 }
 
@@ -15,12 +16,14 @@
   display: flex;
   flex-direction: row;
   height: 80vh;
+  height: calc(var(--vh, 1vh) * 80);
   width: 100vw;
   overflow: hidden;
 }
 
 #home{
   height: 80vh;
+  height: calc(var(--vh, 1vh) * 80);
   width: 100vw;
 }
 
@@ -31,6 +34,7 @@
   position: relative;
   top: 10vh;
   height: 40vh;
+  height: calc(var(--vh, 1vh) * 40);
   width: 100vw;
   background-color: white;
   /*background-image: url("../images/banner.svg");
@@ -81,6 +85,7 @@
 .app-buttons{
   width: inherit;
   height: 4vh;
+  height: calc(var(--vh, 1vh) * 4);
   justify-content: center;
   align-items: center;
   display: flex;
@@ -143,6 +148,7 @@
   position: absolute;
   left: 30.75vw;
   bottom: 20vh;
+  height: calc(var(--vh, 1vh) * 20);
 }
 
 @media only screen and (max-width: 1024px) and (min-width: 601px){

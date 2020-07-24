@@ -1,6 +1,5 @@
 import * as React from 'react'
 import '../styles/About.css'
-import '../styles/Slider.css'
 
 class About extends React.Component<{ skills }, { relatedProjects }>{
 

@@ -1,7 +1,5 @@
 import * as React from 'react'
 import '../styles/Projects.css'
-import '../styles/Slider.css'
-
 
 class Projects extends React.Component<{}, { titles, currentProject }>{    
     constructor(props){
