@@ -11,6 +11,7 @@
     align-items: center;
     min-width: 100vw;
     height: 80vh;
+    height: calc(var(--vh, 1vh) * 80);
     
     position: relative;
 }
@@ -20,6 +21,7 @@
     flex-direction: column;
     float: right;
     height: 60vh;
+    height: calc(var(--vh, 1vh) * 60);
     width: 45vw;
     background-color: white;
     overflow: auto;
@@ -83,6 +85,7 @@
     margin: 1rem;
     width: 8.5vw;
     height: 6vh;
+    height: calc(var(--vh, 1vh) * 6);
     color: white;
     background-color: var(--color-2);
     border: none;
@@ -102,12 +105,14 @@
 @media only screen and (max-width: 1024px) and (min-width: 601px){
     .contact-container{
         height: 40vh;
+        height: calc(var(--vh, 1vh) * 40);
         width: 60vw;
     }
 
     .contact-button{
         width: 12vw;
         height: 5vh;
+        height: calc(var(--vh, 1vh) * 5);
     }
 }
 

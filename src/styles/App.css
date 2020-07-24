@@ -91,6 +91,8 @@
   display: flex;
   position: absolute;
   top: 85vh;
+  top: calc(var(--vh, 1vh) * 85);
+
 }
 
 .app-buttons__seperator{

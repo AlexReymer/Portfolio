@@ -11,12 +11,14 @@
     justify-content: center;
     align-items: center;
     height: 80vh;
+    height: calc(var(--vh, 1vh) * 80);
     min-width: 100vw;
 }
 
 .projects-bookmark{
     width: 13.5vw;
     height: 60vh;
+    height: calc(var(--vh, 1vh) * 60);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,6 +38,7 @@
     width: 12.5vw;
     padding: 0 1vw 0 1vw;
     height: 10vh;
+    height: calc(var(--vh, 1vh) * 10);
     transition: all 500ms;
 }
 
@@ -50,6 +53,7 @@
 
 .projects-project{
     height: 60vh;
+    height: calc(var(--vh, 1vh) * 60);
     width: 74.5vw;
     background-color: white;
     padding: 0 0 0 1vw;
@@ -87,6 +91,7 @@
         overflow-x: auto;
         overflow-y: hidden;
         height: 15vh;
+        height: calc(var(--vh, 1vh) * 15);
         width: 90vw;
         margin: 0;
     }
@@ -101,6 +106,7 @@
     .projects-project{
         width: 90vw;
         height: 45vh;
+        height: calc(var(--vh, 1vh) * 45);
         padding: 0;
     }
 }
