@@ -58,6 +58,8 @@
     background-color: white;
     padding: 0 0 0 1vw;
     box-shadow: 4px 4px 0px var(--color-4);
+    overflow-y: auto;
+    overflow-x: none;
 }
 
 .projects-project__title{
@@ -76,8 +78,12 @@
     color: var(--color-2);
 }
 
-.projects-project__link{
+.projects-project__link-container{
     margin: 0 1rem 1rem 1rem;
+    color: var(--color-4);
+}
+
+.projects-project__link{
     color: var(--color-4);
 }
 

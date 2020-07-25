@@ -21,7 +21,7 @@ class Projects extends React.Component<{}, { titles, currentProject }>{
             const titles = json.map(obj => obj.title)
             this.setState({
                 titles: titles,
-                currentProject: this.state.currentProject
+                currentProject: json[0]
             })
         }).catch((error) => {
             console.log(error)
@@ -71,7 +71,7 @@ class Projects extends React.Component<{}, { titles, currentProject }>{
                 <h1 className='projects-project__title'>{this.state.currentProject.title}</h1>
                 <p className='projects-project__desc'>{this.state.currentProject.long_desc}</p>
                 <p className='projects-project__tags'>{tags !== '' && `Tags: ${tags.slice(2)}`}</p>
-                <a href={this.state.currentProject.link} className='projects-project__link'>{this.state.currentProject !== {} && this.state.currentProject.link}</a>
+                <p className='projects-project__link-container'>Github: <a href={this.state.currentProject.link} className='projects-project__link'>Link</a></p>
             </div>
         </div>)
     }
