@@ -37,6 +37,7 @@
 
 .contact-form{
     max-width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     margin: 0 1rem 0 1rem;
@@ -82,7 +83,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1rem;
+    margin: 0 0 1rem 0;
     width: 8.5vw;
     height: 6vh;
     height: calc(var(--vh, 1vh) * 6);
@@ -104,8 +105,8 @@
 
 @media only screen and (max-width: 1024px) and (min-width: 601px){
     .contact-container{
-        height: 40vh;
-        height: calc(var(--vh, 1vh) * 40);
+        height: 60vh;
+        height: calc(var(--vh, 1vh) * 60);
         width: 60vw;
     }
 

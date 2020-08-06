@@ -21,8 +21,9 @@ class Projects extends React.Component<{}, { titles, currentProject }>{
             const titles = json.map(obj => obj.title)
             this.setState({
                 titles: titles,
-                currentProject: json[0]
+                currentProject: {}
             })
+            document.getElementById(`projects-bookmark__${titles[0]}`)?.click()
         }).catch((error) => {
             console.log(error)
         })
@@ -52,7 +53,6 @@ class Projects extends React.Component<{}, { titles, currentProject }>{
 
     render(){
         const titleComponents = this.state.titles.map(title => <p key={title} className='projects-bookmark__name' id={`projects-bookmark__${title}`}>{title}</p>)
-
         let tags: String = ''
         
         // Nicely align the tags of the currently selected project
