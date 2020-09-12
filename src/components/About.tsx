@@ -20,6 +20,7 @@ class About extends React.Component<{ skills }, { relatedProjects }>{
                 headers: new Headers()
             }).then(res => res.json()).then(json => {
                 const relatedProjects: String[] = json.map(obj => obj.title)
+                
                 this.setState({ relatedProjects: relatedProjects})
             }).catch((error) => {
                 console.log(error)
@@ -35,6 +36,12 @@ class About extends React.Component<{ skills }, { relatedProjects }>{
             <div key={s} className='about-skills__skill-container'>
                 <li className='about-skills__skill'>{s}</li>
             </div>)
+        
+        let titles: String = ''
+
+        this.state.relatedProjects.forEach(title => {
+            titles += `, ${title}`
+        });
 
         return(
             <div className='about-container' id='about'>
@@ -53,7 +60,7 @@ class About extends React.Component<{ skills }, { relatedProjects }>{
                     <ul className='about-skills' onMouseOver={this.getRelatedProjects}>
                         {skillComponents}
                     </ul>
-                    <p className='about-related'>Related Projects: {this.state.relatedProjects}</p>
+                    <p className='about-related'>Related Projects: {titles !== '' && titles.slice(2)}</p>
                 </div>
         </div>)
     }

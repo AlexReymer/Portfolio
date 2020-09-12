@@ -23,7 +23,7 @@ class Projects extends React.Component<{}, { titles, currentProject }>{
                 titles: titles,
                 currentProject: {}
             })
-            document.getElementById(`projects-bookmark__${titles[0]}`)?.click()
+            document.getElementById(`projects-bookmark__${titles[titles.length - 1]}`)?.click()
         }).catch((error) => {
             console.log(error)
         })
@@ -65,10 +65,10 @@ class Projects extends React.Component<{}, { titles, currentProject }>{
         return(
         <div className='projects-container' id='projects'>
             <div className='projects-bookmark' onClick={this.viewProject}>
-                {titleComponents}
+                {titleComponents.reverse()}
             </div>
             <div className='projects-project'>
-                <h1 className='projects-project__title'>{this.state.currentProject.title}</h1>
+                <h1 className='projects-project__title'>{this.state.currentProject.title}<span id='status-development'>{this.state.currentProject.status === 'Development' && ' In Development'}</span></h1>
                 <p className='projects-project__desc'>{this.state.currentProject.long_desc}</p>
                 <p className='projects-project__tags'>{tags !== '' && `Tags: ${tags.slice(2)}`}</p>
                 <p className='projects-project__link-container'>Github: <a href={this.state.currentProject.link} className='projects-project__link'>Link</a></p>
