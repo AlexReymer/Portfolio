@@ -1,65 +1,65 @@
-:root{
-    --color-1: #747C92;
-    --color-2: #DC493A;
-    --color-3: #97D8C4;
-    --color-4: #FFBF46;
-  }  
-
-.header-container{
-    display: flex;
-    background-color: black;
-    width: 100vw;
-    height: 12vh;
-    height: calc(var(--vh, 1vh) * 12);
-
-    box-shadow: 2px 2px 5px var(--color-1);
+:root {
+  --color-1: #747c92;
+  --color-2: #dc493a;
+  --color-3: #97d8c4;
+  --color-4: #ffbf46;
 }
 
-#header-logo{   
-    position: relative;
-    max-height: 17vh;
-    max-height: calc(var(--vh, 1vh) * 17);
-    max-width: 22vw;
-    left: 4vw;
+.header-container {
+  display: flex;
+  background-color: black;
+  width: 100vw;
+  height: 12vh;
+  height: calc(var(--vh, 1vh) * 12);
 
-    box-shadow: 0px 2px 5px var(--color-1);
-    z-index: 10;
+  box-shadow: 2px 2px 5px var(--color-1);
 }
 
-#header-logo:hover{
-    max-height: 18vh;
-    max-height: calc(var(--vh, 1vh) * 18);
-    max-width: 23vw;
+#header-logo {
+  position: relative;
+  max-height: 17vh;
+  max-height: calc(var(--vh, 1vh) * 17);
+  max-width: 22vw;
+  left: 4vw;
+
+  box-shadow: 0px 2px 5px var(--color-1);
+  z-index: 10;
 }
 
-#header-logo{
-    transition: all 0.25s;
+#header-logo:hover {
+  max-height: 18vh;
+  max-height: calc(var(--vh, 1vh) * 18);
+  max-width: 23vw;
 }
 
-.header-navbar{
-    display: flex;
-    justify-content: flex-end;
-    width: inherit;
-    height: inherit;
+#header-logo {
+  transition: all 0.25s;
 }
 
-.header-navbar__link{
-    height: inherit;
-    display: flex;
-    align-items: center;
-    font-size: 1.2rem;
-    color: white;
-    text-decoration: none;
-    padding: 0 4vw 0 4vw;
-    border-right: solid 2px white;
+.header-navbar {
+  display: flex;
+  justify-content: flex-end;
+  width: inherit;
+  height: inherit;
 }
 
-.header-navbar__link:hover{
-    text-decoration: underline;
+.header-navbar__link {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+  padding: 0 4vw 0 4vw;
+  border-right: solid 2px white;
 }
 
-.header-navbar__link--highlight{
-    color: var(--color-1);
-    background-color: white;
-    transition: all 0.5s;
+.header-navbar__link:hover {
+  text-decoration: underline;
+}
+
+.header-navbar__link--highlight {
+  color: var(--color-1);
+  background-color: white;
+  transition: all 0.5s;
 }

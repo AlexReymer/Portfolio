@@ -1,124 +1,124 @@
-:root{
-    --color-1: #747C92;
-    --color-2: #DC493A;
-    --color-3: #97D8C4;
-    --color-4: #FFBF46;
-}  
-
-.projects-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    height: calc(var(--vh, 1vh) * 80);
-    min-width: 100vw;
+:root {
+  --color-1: #747c92;
+  --color-2: #dc493a;
+  --color-3: #97d8c4;
+  --color-4: #ffbf46;
 }
 
-.projects-bookmark{
-    width: 13.5vw;
-    height: 60vh;
-    height: calc(var(--vh, 1vh) * 60);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-y: auto;
-    background-color: white;
-    margin: 0 1vw 0 0;
-    box-shadow: 4px 4px 0px var(--color-4);
-    overflow-x: hidden;
+.projects-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  height: calc(var(--vh, 1vh) * 80);
+  min-width: 100vw;
 }
 
-.projects-bookmark__name{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    color: var(--color-1);
-    width: 12.5vw;
-    padding: 0 1vw 0 1vw;
-    height: 10vh;
-    height: calc(var(--vh, 1vh) * 10);
-    transition: all 500ms;
+.projects-bookmark {
+  width: 13.5vw;
+  height: 60vh;
+  height: calc(var(--vh, 1vh) * 60);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  background-color: white;
+  margin: 0 1vw 0 0;
+  box-shadow: 4px 4px 0px var(--color-4);
+  overflow-x: hidden;
 }
 
-.projects-bookmark__name:hover{
-    text-decoration: underline;
+.projects-bookmark__name {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: var(--color-1);
+  width: 12.5vw;
+  padding: 0 1vw 0 1vw;
+  height: 10vh;
+  height: calc(var(--vh, 1vh) * 10);
+  transition: all 500ms;
 }
 
-.projects-bookmark__name--highlight{
-    background-color: var(--color-1);
-    color: white;
+.projects-bookmark__name:hover {
+  text-decoration: underline;
 }
 
-.projects-project{
-    height: 60vh;
-    height: calc(var(--vh, 1vh) * 60);
-    width: 74.5vw;
-    background-color: white;
-    padding: 0 0 0 1vw;
-    box-shadow: 4px 4px 0px var(--color-4);
-    overflow-y: auto;
-    overflow-x: none;
+.projects-bookmark__name--highlight {
+  background-color: var(--color-1);
+  color: white;
 }
 
-.projects-project__title{
-    margin: 1rem;
-    color: var(--color-2);
-    font-size: 1.5rem;
+.projects-project {
+  height: 60vh;
+  height: calc(var(--vh, 1vh) * 60);
+  width: 74.5vw;
+  background-color: white;
+  padding: 0 0 0 1vw;
+  box-shadow: 4px 4px 0px var(--color-4);
+  overflow-y: auto;
+  overflow-x: none;
 }
 
-.projects-project__desc{
-    margin: 0 1rem 1rem 1rem;
-    color: var(--color-1);
+.projects-project__title {
+  margin: 1rem;
+  color: var(--color-2);
+  font-size: 1.5rem;
 }
 
-.projects-project__tags{
-    margin: 0 1rem 1rem 1rem;
-    color: var(--color-2);
+.projects-project__desc {
+  margin: 0 1rem 1rem 1rem;
+  color: var(--color-1);
 }
 
-.projects-project__link-container{
-    margin: 0 1rem 1rem 1rem;
-    color: var(--color-4);
+.projects-project__tags {
+  margin: 0 1rem 1rem 1rem;
+  color: var(--color-2);
 }
 
-#status-development{
-    color: var(--color-4);
-    font-weight: normal;
-    font-style: italic;
+.projects-project__link-container {
+  margin: 0 1rem 1rem 1rem;
+  color: var(--color-4);
 }
 
-.projects-project__link{
-    color: var(--color-4);
+#status-development {
+  color: var(--color-4);
+  font-weight: normal;
+  font-style: italic;
+}
+
+.projects-project__link {
+  color: var(--color-4);
 }
 
 @media only screen and (max-width: 600px) {
-    .projects-container{
-        flex-direction: column;
-    }
+  .projects-container {
+    flex-direction: column;
+  }
 
-    .projects-bookmark{
-        flex-direction: row;
-        overflow-x: auto;
-        overflow-y: hidden;
-        height: 15vh;
-        height: calc(var(--vh, 1vh) * 15);
-        width: 90vw;
-        margin: 0;
-    }
+  .projects-bookmark {
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 15vh;
+    height: calc(var(--vh, 1vh) * 15);
+    width: 90vw;
+    margin: 0;
+  }
 
-    .projects-bookmark__name{
-        padding: 0 1vw 0 1vw;
-        min-width: 28vw;
-        height: 100%;
-        border: none;
-    }
+  .projects-bookmark__name {
+    padding: 0 1vw 0 1vw;
+    min-width: 28vw;
+    height: 100%;
+    border: none;
+  }
 
-    .projects-project{
-        width: 90vw;
-        height: 45vh;
-        height: calc(var(--vh, 1vh) * 45);
-        padding: 0;
-    }
+  .projects-project {
+    width: 90vw;
+    height: 45vh;
+    height: calc(var(--vh, 1vh) * 45);
+    padding: 0;
+  }
 }

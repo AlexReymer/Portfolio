@@ -1,8 +1,8 @@
-:root{
-  --color-1: #747C92;
-  --color-2: #DC493A;
-  --color-3: #97D8C4;
-  --color-4: #FFBF46;
+:root {
+  --color-1: #747c92;
+  --color-2: #dc493a;
+  --color-3: #97d8c4;
+  --color-4: #ffbf46;
 }
 
 .app-container {
@@ -12,7 +12,7 @@
   width: 100vw;
 }
 
-.app{
+.app {
   display: flex;
   flex-direction: row;
   height: 80vh;
@@ -21,13 +21,13 @@
   overflow: hidden;
 }
 
-#home{
+#home {
   height: 80vh;
   height: calc(var(--vh, 1vh) * 80);
   width: 100vw;
 }
 
-.app-banner-container{
+.app-banner-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,14 +43,14 @@
   overflow: hidden;
 }
 
-.app-banner__text{
+.app-banner__text {
   text-align: center;
   color: var(--color-4);
   opacity: 0.2;
   font-size: 2.7vmax;
 }
 
-.app-banner-flex{
+.app-banner-flex {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,20 +59,20 @@
   height: inherit;
 }
 
-.app-banner{
+.app-banner {
   display: flex;
   flex-direction: column;
   position: absolute;
   right: 1%;
 }
 
-.app-banner__name{
+.app-banner__name {
   color: var(--color-2);
   font-size: 4.8rem;
   margin: 0 0 1rem 0;
 }
 
-.app-banner__subtitle{
+.app-banner__subtitle {
   color: white;
   background-color: var(--color-2);
   text-align: center;
@@ -81,7 +81,7 @@
   font-weight: lighter;
 }
 
-.app-buttons{
+.app-buttons {
   width: inherit;
   height: 4vh;
   height: calc(var(--vh, 1vh) * 4);
@@ -91,10 +91,9 @@
   position: absolute;
   top: 85vh;
   top: calc(var(--vh, 1vh) * 85);
-
 }
 
-.app-buttons__seperator{
+.app-buttons__seperator {
   width: 0;
   height: 0;
   border: 5px solid transparent;
@@ -104,7 +103,7 @@
 }
 
 .app-buttons__seperator:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 5px;
   left: -5px;
@@ -114,9 +113,9 @@
   border-top-color: var(--color-1);
 }
 
-.button--circular{
-  height: 1.0rem;
-  width: 1.0rem;
+.button--circular {
+  height: 1rem;
+  width: 1rem;
   background-color: var(--color-1);
   border-radius: 50%;
   margin: 0.25rem;
@@ -126,21 +125,21 @@
   transition: all 800ms;
 }
 
-.button--circular:hover{
+.button--circular:hover {
   background-color: white;
 }
 
-.button--circular--selected{
+.button--circular--selected {
   height: 1.25rem;
   width: 1.25rem;
   margin: 0.15rem;
   background-color: var(--color-2);
 }
-.button--circular--selected:hover{
+.button--circular--selected:hover {
   background-color: var(--color-2);
 }
 
-.button--rect{
+.button--rect {
   color: white;
   text-decoration: none;
   background-color: var(--color-2);
@@ -152,26 +151,26 @@
   height: calc(var(--vh, 1vh) * 20);
 }
 
-@media only screen and (max-width: 1024px) and (min-width: 601px){
-  .app-banner{
+@media only screen and (max-width: 1024px) and (min-width: 601px) {
+  .app-banner {
     position: unset;
   }
 
-  .app-banner__text{
+  .app-banner__text {
     font-size: 3vmax;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .app-banner{
+  .app-banner {
     position: unset;
   }
 
-  .app-banner__text{
+  .app-banner__text {
     font-size: 3.5vmax;
   }
 
-  .app-banner__name{
+  .app-banner__name {
     font-size: 3.25rem;
   }
 }

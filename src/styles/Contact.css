@@ -1,128 +1,131 @@
-:root{
-    --color-1: #747C92;
-    --color-2: #DC493A;
-    --color-3: #97D8C4;
-    --color-4: #FFBF46;
+:root {
+  --color-1: #747c92;
+  --color-2: #dc493a;
+  --color-3: #97d8c4;
+  --color-4: #ffbf46;
 }
 
-.contact-flex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 100vw;
-    height: 80vh;
-    height: calc(var(--vh, 1vh) * 80);
-    
-    position: relative;
+.contact-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+  height: 80vh;
+  height: calc(var(--vh, 1vh) * 80);
+
+  position: relative;
 }
 
-.contact-container{
-    display: flex;
-    flex-direction: column;
-    float: right;
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  height: 60vh;
+  height: calc(var(--vh, 1vh) * 60);
+  width: 45vw;
+  background-color: white;
+  overflow: auto;
+
+  box-shadow: 4px 4px 0px var(--color-4);
+}
+
+.contact-title {
+  color: var(--color-2);
+  font-size: 1.5rem;
+  margin: 1rem 1rem 0.5rem 1rem;
+}
+
+.contact-form {
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem 0 1rem;
+  color: var(--color-1);
+}
+
+.contact-form__label {
+  margin: 0.2rem 0 0.2rem 0;
+}
+
+.contact-form__input {
+  border: solid 1px var(--color-1);
+  color: var(--color-1);
+  width: 100%;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--color-2);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--color-2);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--color-2);
+}
+
+#contact-form__message {
+  font-family: Arial, Helvetica, sans-serif;
+  resize: none;
+}
+
+.contact-button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.contact-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 1rem 0;
+  width: 8.5vw;
+  height: 6vh;
+  height: calc(var(--vh, 1vh) * 6);
+  color: white;
+  background-color: var(--color-2);
+  border: none;
+  outline: none;
+  box-shadow: 4px 4px 0px var(--color-4);
+  transition: all 0.25s;
+}
+
+.contact-button:hover {
+  color: var(--color-2);
+  background-color: white;
+  box-sizing: border-box;
+  border: 2px solid var(--color-2);
+  box-shadow: 4px 4px 0px var(--color-2);
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 601px) {
+  .contact-container {
     height: 60vh;
     height: calc(var(--vh, 1vh) * 60);
-    width: 45vw;
-    background-color: white;
-    overflow: auto;
+    width: 60vw;
+  }
 
-    box-shadow: 4px 4px 0px var(--color-4);
-}
-
-.contact-title{
-    color: var(--color-2);
-    font-size: 1.5rem;
-    margin: 1rem 1rem 0.5rem 1rem;
-}
-
-.contact-form{
-    max-width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    margin: 0 1rem 0 1rem;
-    color: var(--color-1);
-}
-
-.contact-form__label{
-    margin: 0.2rem 0 0.2rem 0;
-}
-
-.contact-form__input{
-    border: solid 1px var(--color-1);
-    color: var(--color-1);
-    width: 100%;
-}
-
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: var(--color-2);
-    opacity: 1; /* Firefox */
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: var(--color-2);
-}
-
-::-ms-input-placeholder { /* Microsoft Edge */
-    color:var(--color-2);
-}
-
-#contact-form__message{
-    font-family: Arial, Helvetica, sans-serif;
-    resize: none;
-}
-
-.contact-button-container{
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    height: 100%;
-}
-
-.contact-button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 0 1rem 0;
-    width: 8.5vw;
-    height: 6vh;
-    height: calc(var(--vh, 1vh) * 6);
-    color: white;
-    background-color: var(--color-2);
-    border: none;
-    outline: none;
-    box-shadow: 4px 4px 0px var(--color-4);
-    transition: all 0.25s;
-}
-
-.contact-button:hover{
-    color: var(--color-2) ;
-    background-color: white;
-    box-sizing: border-box;
-    border: 2px solid var(--color-2);
-    box-shadow: 4px 4px 0px var(--color-2);
-}
-
-@media only screen and (max-width: 1024px) and (min-width: 601px){
-    .contact-container{
-        height: 60vh;
-        height: calc(var(--vh, 1vh) * 60);
-        width: 60vw;
-    }
-
-    .contact-button{
-        width: 12vw;
-        height: 5vh;
-        height: calc(var(--vh, 1vh) * 5);
-    }
+  .contact-button {
+    width: 12vw;
+    height: 5vh;
+    height: calc(var(--vh, 1vh) * 5);
+  }
 }
 
 @media only screen and (max-width: 600px) {
-    .contact-container{
-        width: 90vw;
-    }
+  .contact-container {
+    width: 90vw;
+  }
 
-    .contact-button{
-        width: 20vw;
-    }
+  .contact-button {
+    width: 20vw;
+  }
 }
